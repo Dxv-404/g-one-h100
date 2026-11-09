@@ -59,7 +59,7 @@ About 2 to 3 hours, four parts in order, each reported as it finishes:
 |---|---|---|
 | check | the full machine check: installs the environment, runs the test gates | the run refuses to start on an unchecked machine |
 | determinism | one seed of the final program in 6 fresh processes must agree bit for bit | different compilations of one program once disagreed (DEV-038) |
-| concurrency | how many long-run processes at once, measured, with results compared bit for bit | sets how the run is split |
+| concurrency | how many long-run processes at once per card (up to 32), then every card at once, results compared bit for bit; the costliest conditions timed; a projected duration with the in-run S4 included | sets how the run is split and how long it takes |
 | recheck | the S4 learnability check on the frozen world, on this card | the calibration ran on a laptop |
 
 It refuses to start if a long run or another check is already running. At the end it says which file to send:
