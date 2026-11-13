@@ -53,7 +53,7 @@ Everything from here runs inside it. To leave it running, press Ctrl+B, then D. 
 
     bash scripts/a6000/session2.sh
 
-About 2 to 3 hours, four parts in order, each reported as it finishes:
+About 2 to 3 hours, five parts in order, each reported as it finishes:
 
 | Part | What it checks | Why |
 |---|---|---|
@@ -61,6 +61,7 @@ About 2 to 3 hours, four parts in order, each reported as it finishes:
 | determinism | one seed of the final program in 6 fresh processes must agree bit for bit | different compilations of one program once disagreed (DEV-038) |
 | concurrency | how many long-run processes at once per card (up to 32), then every card at once, results compared bit for bit; the costliest conditions timed; a projected duration with the in-run S4 included | sets how the run is split and how long it takes |
 | recheck | the S4 learnability check on the frozen world, on this card | the calibration ran on a laptop |
+| batch | several seeds inside one process, compared bit for bit with one at a time, and timed (D-094) | the other way to use a card one seed does not fill |
 
 It refuses to start if a long run or another check is already running. At the end it says which file to send:
 `results/session2.tar`. **Send it and wait**: the launch command depends on what it measured.

@@ -214,7 +214,7 @@ baselines() {
   "$PY" -m pytest tests/scientific/test_s5_s6_null.py -k "test_s6" -q >results/s6.log 2>&1
   tail -n 1 results/s6.log | tee -a "$RUNLOG"
   say "the paired power analysis on this machine's baselines"
-  "$PY" -u scripts/measure/pairing_power.py results/pairing_power.npz >results/pairing_power.log 2>&1
+  "$PY" -u scripts/measure/pairing_power.py runs/pairing_power.npz >results/pairing_power.log 2>&1  # DEV-046: never results/
   tail -n 12 results/pairing_power.log | tee -a "$RUNLOG"
   {
     echo "baselines done $(date '+%Y-%m-%d %H:%M:%S')"
